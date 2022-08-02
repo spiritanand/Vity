@@ -6,7 +6,7 @@ let lastHole, timeUp = false, started = false, score = 0;
 let allPlayers = JSON.parse(localStorage.getItem("items")) || [];
 let currentPlayer = {};
 let difficulty;
-let max, min;
+let max = 2000, min = 600;
 
 populateAllScoreBoard();
 document.nameForm.addEventListener("submit", submitted);
@@ -27,7 +27,7 @@ function startGame() {
     scoreBoard.textContent = score;
     timeUp = false;
     peep();
-    setTimeout(endGame, 10000);
+    setTimeout(endGame, 3000);
 }
 
 function randTime(max, min) {
@@ -44,7 +44,7 @@ function randHole(holes) {
 }
 
 function peep() {
-    const time = randTime(1000, 300);
+    const time = randTime(max, min);
     const hole = randHole(holes);
 
     const mole = hole.querySelector(".mole");
@@ -64,9 +64,23 @@ function bonk(e) {
     currentPlayer.score = score;
 }
 
-function populateAllScoreBoard() {
+function endGame() {
+    timeUp = true;
+    started = false;
+    setTimeout(updateScoreBoard, max);
+}
+
+function updateScoreBoard() {
     allPlayers.sort((a, b) => a.score > b.score ? -1 : 1);
-    allPlayers = allPlayers.slice(0,10);
+    allPlayers = allPlayers.slice(0, 10);
+    allPlayers.push(currentPlayer);
+    localStorage.setItem("items", JSON.stringify(allPlayers));
+    populateAllScoreBoard();
+    scoreBoard.textContent = `0`;
+    currentPlayer = {};
+}
+
+function populateAllScoreBoard() {
     let i = 1;
     allTimeScoreBoard.innerHTML = allPlayers.map(player => {
         return `<tr>
@@ -75,17 +89,4 @@ function populateAllScoreBoard() {
                 <td>${player.score}</td>
             </tr>`
     }).join("");
-}
-
-function endGame() {
-    timeUp = true;
-    started = false;
-    scoreBoard.textContent = `0`;
-    setTimeout(updateScoreBoard, 5100);
-}
-
-function updateScoreBoard(){
-    allPlayers.push(currentPlayer);
-    populateAllScoreBoard();
-    localStorage.setItem("items", JSON.stringify(allPlayers));
 }

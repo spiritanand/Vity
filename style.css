@@ -24,7 +24,7 @@ h1 {
     font-size: 10rem;
     line-height: 1;
     padding: 0;
-    margin-bottom: 0;
+    margin: 1rem;
 }
 
 .score {
@@ -61,7 +61,7 @@ h1 {
 
 .game {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     margin: 2rem auto 7rem;
     flex-wrap: wrap;
@@ -69,7 +69,7 @@ h1 {
 }
 
 .hole {
-    flex: 0 0 50%;
+    flex: 1 0 50%;
     position: relative;
     overflow: hidden;
     /*border: black 10px double;*/
@@ -93,7 +93,7 @@ h1 {
     background-size: 35%;
     position: absolute;
     top: 100%;
-    left: 40%;
+    right: 20%;
     width: 250px;
     height: 200px;
     transition: all 0.3s;
