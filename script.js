@@ -27,7 +27,7 @@ function startGame() {
     scoreBoard.textContent = score;
     timeUp = false;
     peep();
-    setTimeout(endGame, 3000);
+    setTimeout(endGame, 10000);
 }
 
 function randTime(max, min) {
