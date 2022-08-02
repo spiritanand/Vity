@@ -1,0 +1,142 @@
+:root {
+    --main-color: green;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: var(--main-color);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 7rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 6rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.start {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.player-name {
+    height: 100%;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+}
+
+.start-btn {
+    display: block;
+    width: 100%;
+    background: black;
+    color: var(--main-color);
+    border: none;
+    font-size: 2rem;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.score {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 3rem;
+    line-height: 1;
+    border-radius: 1rem;
+}
+
+.game {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.hole {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hole::after {
+    display: block;
+    background: url(dirt.svg) bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    z-index: 2;
+    bottom: -20%;
+    right: 10%;
+}
+
+.mole {
+    background: url('mole.svg') bottom center no-repeat;
+    background-size: 35%;
+    position: absolute;
+    top: 100%;
+    width: 250px;
+    height: 200px;
+    transition: all 0.4s;
+}
+
+.mole.up {
+    top: 0;
+}
+
+.scores-tbl-header {
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+.scores-tbl-header > th{
+    padding: 2rem;
+}
+
+.scores-tbl-content {
+    font-size: 2.75rem;
+}
+
+.all-scores-table {
+    margin: 0 auto;
+}
+
+.scores-tbl-content td {
+    padding: 0.5rem;
+}
+
+.scores-tbl-content tr:nth-child(1) {
+    background-color: gold;
+}
+
+.scores-tbl-content tr:nth-child(2) {
+    background-color: silver;
+}
+
+.scores-tbl-content tr:nth-child(3) {
+    background-color: sandybrown;
+}
