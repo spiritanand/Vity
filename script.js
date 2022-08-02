@@ -1,4 +1,3 @@
-
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
@@ -69,8 +68,7 @@ function populateAllScoreBoard() {
     allPlayers = allPlayers.slice(0,9);
     let i = 1;
     allTimeScoreBoard.innerHTML = allPlayers.map(player => {
-        return `
-            <tr>
+        return `<tr>
                 <td>${i++}</td>
                 <td>${player.name}</td>
                 <td>${player.score}</td>
