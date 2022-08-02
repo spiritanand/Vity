@@ -1,11 +1,11 @@
 :root {
     --main-color: green;
+    --second-color: black;
 
 }
 
 html {
     box-sizing: border-box;
-    font-size: 10px;
     background: var(--main-color);
 }
 
@@ -21,16 +21,17 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 7rem;
+    font-size: 10rem;
     line-height: 1;
+    padding: 0;
     margin-bottom: 0;
 }
 
-h2 {
-    text-align: center;
-    font-size: 6rem;
+.score {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 3rem;
     line-height: 1;
-    margin-bottom: 0;
+    border-radius: 1rem;
 }
 
 .start {
@@ -43,33 +44,26 @@ h2 {
 
 .player-name {
     height: 100%;
-    margin-top: 3rem;
-    font-size: 1.5rem;
+    margin-top: 5rem;
+    font-size: 2.3rem;
 }
 
 .start-btn {
     display: block;
-    width: 100%;
-    background: black;
+    width: 30%;
+    background: var(--second-color);
     color: var(--main-color);
     border: none;
-    font-size: 2rem;
-    padding: 2rem;
-    margin-top: 1rem;
-}
-
-.score {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0 3rem;
-    line-height: 1;
-    border-radius: 1rem;
+    font-size: 3rem;
+    padding: 1rem;
+    margin: 2rem auto 0;
 }
 
 .game {
     width: 100%;
-    height: 600px;
+    height: 40vh;
     display: flex;
-    margin-bottom: 1rem;
+    margin: 2rem auto 7rem;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -78,20 +72,20 @@ h2 {
     flex: 0 0 50%;
     position: relative;
     overflow: hidden;
+    /*border: black 10px double;*/
 }
-
 
 .hole::after {
     display: block;
     background: url(dirt.svg) bottom center no-repeat;
     background-size: contain;
     content: '';
-    width: 80%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     position: absolute;
-    z-index: 2;
-    bottom: -20%;
-    right: 10%;
+    top: 55%;
+    right: 20%;
+    padding: 2rem;
 }
 
 .mole {
@@ -99,13 +93,15 @@ h2 {
     background-size: 35%;
     position: absolute;
     top: 100%;
+    left: 40%;
     width: 250px;
     height: 200px;
-    transition: all 0.4s;
+    transition: all 0.3s;
 }
 
 .mole.up {
-    top: 0;
+    top: 10%;
+    z-index: 1;
 }
 
 .scores-tbl-header {
@@ -113,16 +109,27 @@ h2 {
     padding: 2rem;
 }
 
-.scores-tbl-header > th{
-    padding: 2rem;
-}
-
 .scores-tbl-content {
     font-size: 2.75rem;
 }
 
+.all-scores h2 {
+    text-align: center;
+    font-size: 7.5rem;
+    margin: 0 auto;
+}
+
+.all-scores-div {
+    height: 1rem;
+}
+
 .all-scores-table {
     margin: 0 auto;
+    height: 10vh;
+}
+
+.all-scores-table th {
+    padding: 2rem;
 }
 
 .scores-tbl-content td {

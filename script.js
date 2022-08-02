@@ -15,6 +15,7 @@ moles.forEach(mole => mole.addEventListener("click", bonk));
 function submitted(e) {
     e.preventDefault();
     currentPlayer.name = this.playerName.value;
+    currentPlayer.score = 0;
     startGame();
     this.reset();
 }
@@ -43,7 +44,7 @@ function randHole(holes) {
 }
 
 function peep() {
-    const time = randTime(500, 1000);
+    const time = randTime(1000, 300);
     const hole = randHole(holes);
 
     const mole = hole.querySelector(".mole");
@@ -65,7 +66,7 @@ function bonk(e) {
 
 function populateAllScoreBoard() {
     allPlayers.sort((a, b) => a.score > b.score ? -1 : 1);
-    allPlayers = allPlayers.slice(0,9);
+    allPlayers = allPlayers.slice(0,10);
     let i = 1;
     allTimeScoreBoard.innerHTML = allPlayers.map(player => {
         return `<tr>
@@ -79,6 +80,11 @@ function populateAllScoreBoard() {
 function endGame() {
     timeUp = true;
     started = false;
+    scoreBoard.textContent = `0`;
+    setTimeout(updateScoreBoard, 5100);
+}
+
+function updateScoreBoard(){
     allPlayers.push(currentPlayer);
     populateAllScoreBoard();
     localStorage.setItem("items", JSON.stringify(allPlayers));
