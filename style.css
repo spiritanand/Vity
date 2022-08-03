@@ -5,7 +5,7 @@
 :root {
     --main-color: white;
     --second-color: #75009e;
-    --third-color: hsl(92, 83%, 33%);
+    --grass-color: #a8eb12;
 }
 
 html {
@@ -38,12 +38,13 @@ h2 {
     font-size: 6.25rem;
     text-transform: capitalize;
     font-family: 'Playfair Display', serif;
+    color: var(--second-color);
 }
 
 
 .start {
     background-image: linear-gradient(to bottom, #75009e, #dc006e,
-    #ff452b, #eca200, #a8eb12);
+    #ff452b, #eca200, var(--grass-color));
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -84,7 +85,7 @@ h2 {
     margin: 0 auto;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #a8eb12;
+    background-color: var(--grass-color);
 }
 
 .hole {
@@ -149,9 +150,9 @@ h2 {
 
 .all-scores {
     padding-top: 5rem;
-    min-height: 500px;
     background-image: linear-gradient(to top,
-    #75009e, #dc006e, #ff452b, #eca200, #a8eb12);
+    #75009e, #dc006e, #ff452b, #eca200, var(--grass-color));
+    min-height: 650px;
 }
 
 .all-scores h2 {
@@ -161,6 +162,7 @@ h2 {
 
 .all-scores-div {
     height: 1rem;
+    color: var(--second-color);
 }
 
 .all-scores-table {
@@ -179,10 +181,12 @@ h2 {
 }
 
 .all-scores-table th {
+    font-family: 'Open Sans', sans-serif;
     padding: 2rem;
 }
 
 .scores-tbl-content td {
+    text-align: center;
     padding: 0.5rem;
 }
 
@@ -199,8 +203,8 @@ h2 {
 }
 
 footer {
+    display: block;
     background-color: black;
-    min-height: 200px;
     padding: 3rem;
 }
 

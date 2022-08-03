@@ -8,12 +8,18 @@ let currentPlayer = {};
 let difficulty;
 let max = 2000, min = 600;
 
-if (allTimeScoreBoard.length !==0){
-    document.querySelector(".all-scores").style = `display:none`;
-}
-populateAllScoreBoard();
+onPageLoad();
 document.nameForm.addEventListener("submit", submitted);
 moles.forEach(mole => mole.addEventListener("click", bonk));
+
+function onPageLoad() {
+    if (allTimeScoreBoard.length === 0)
+        document.querySelector(".all-scores").style = `display:none`;
+    else {
+        document.querySelector(".all-scores").style = `display:block`;
+        populateAllScoreBoard();
+    }
+}
 
 function submitted(e) {
     e.preventDefault();
@@ -77,7 +83,7 @@ function endGame() {
 function updateScoreBoard() {
     allPlayers.push(currentPlayer);
     allPlayers.sort((a, b) => a.score > b.score ? -1 : 1);
-    allPlayers = allPlayers.slice(0, 10);
+    allPlayers = allPlayers.slice(0, 3);
     localStorage.setItem("items", JSON.stringify(allPlayers));
     populateAllScoreBoard();
     scoreBoard.textContent = `0`;
