@@ -9,11 +9,11 @@
 
 <div class=start>
     <h1>Whack the -vity!<br><span class="score">0</span></h1>
-    <form name="nameForm">
-        <label>
-            <input name="playerName" class="player-name" type="text"
-                   placeholder="Player" required>
-        </label>
+    <form class ="name-form" name="nameForm">
+        <input name="playerName" class="player-name" type="text"
+               placeholder="Player Name"
+               autocomplete="off"
+               required>
         <button class="start-btn" type="submit">++VITY++</button>
     </form>
 </div>
@@ -51,6 +51,11 @@
             </tr>
             </thead>
             <tbody class="scores-tbl-content">
+            <tr style="background-color: var(--secondary-color)">
+                <td>Play</td>
+                <td>To</td>
+                <td>Lead</td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -58,7 +63,7 @@
 <script src="./script.js"></script>
 </body>
 <footer>
-    <h2> Made with ♥️ <br>In 🇮🇳️</h2>
+    <h3> Made with ♥️ <br>In 🇮🇳️</h3>
     <a href="https://github.com/spiritmonster"
        target="_blank" rel="noopener noreferrer"
     >

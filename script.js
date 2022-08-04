@@ -8,18 +8,8 @@ let currentPlayer = {};
 let difficulty;
 let max = 2000, min = 600;
 
-onPageLoad();
 document.nameForm.addEventListener("submit", submitted);
 moles.forEach(mole => mole.addEventListener("click", bonk));
-
-function onPageLoad() {
-    if (allTimeScoreBoard.length === 0)
-        document.querySelector(".all-scores").style = `display:none`;
-    else {
-        document.querySelector(".all-scores").style = `display:block`;
-        populateAllScoreBoard();
-    }
-}
 
 function submitted(e) {
     e.preventDefault();

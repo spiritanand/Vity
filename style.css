@@ -1,17 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@900&display=swap');
-/*font-family: 'Open Sans', sans-serif;*/
-/*font-family: 'Playfair Display', serif;*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Montserrat&display=swap');
+
 
 :root {
-    --main-color: white;
-    --second-color: #75009e;
-    --grass-color: #a8eb12;
+    --primary-color: #2F4858;
+    --secondary-color: #43B93A;
+    --grass-color: #43B93A;
+    --bigger-font: 'EB Garamond', serif;
+    --small-font: 'Montserrat', sans-serif;
+;
+}
+*,*:before,*:after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
     box-sizing: border-box;
     background-repeat: no-repeat;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--small-font);
 
 }
 
@@ -25,31 +32,49 @@ body {
 }
 
 h1 {
-    color: var(--main-color);
+    color: var(--secondary-color);
     text-align: center;
     font-size: 7rem;
-    padding: 0;
-    margin: 0;
+    margin: 2rem auto;
     text-transform: capitalize;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--bigger-font);
 }
 
 h2 {
-    font-size: 6.25rem;
+    font-size: 6rem;
     text-transform: capitalize;
-    font-family: 'Playfair Display', serif;
-    color: var(--second-color);
+    font-family: var(--bigger-font);
+    color: var(--primary-color);
 }
 
 
 .start {
-    background-image: linear-gradient(to bottom, #75009e, #dc006e,
-    #ff452b, #eca200, var(--grass-color));
+    background-image: linear-gradient(to bottom, #2f4858, #00667a,
+    #008582, #00a16c, #43b93a);
     display: flex;
     text-align: center;
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    position: relative;
+}
+
+.name-form input{
+    width: 40%;
+    font-family: inherit;
+    border: 4px solid var(--primary-color);
+    outline: none;
+    padding: 1rem;
+    background: none;
+    color: var(--primary-color);
+}
+
+.name-form input::placeholder{
+    color: var(--primary-color);
+}
+
+.name-form input:focus{
+    border: 5px solid var(--secondary-color);
 }
 
 .score {
@@ -61,20 +86,30 @@ h2 {
 
 .player-name {
     height: 100%;
-    margin-top: 4rem;
     font-size: 2.3rem;
 }
 
 .start-btn {
     display: block;
-    width: 30%;
-    background: var(--second-color);
-    color: var(--main-color);
-    border: none;
     font-size: 3rem;
+    width: 30%;
+    color: var(--secondary-color);
+    cursor: pointer;
+    border: none;
     padding: 1rem;
     margin: 2rem auto;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--bigger-font);
+    text-align: center;
+    outline: none;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0 12px #999;
+}
+
+.start-btn:active{
+    background-color: #007882;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .game {
@@ -150,8 +185,7 @@ h2 {
 
 .all-scores {
     padding-top: 5rem;
-    background-image: linear-gradient(to top,
-    #75009e, #dc006e, #ff452b, #eca200, var(--grass-color));
+    background-image: linear-gradient(to top, #2f4858, #00667a, #008582, #00a16c, #43b93a);
     min-height: 650px;
 }
 
@@ -162,18 +196,17 @@ h2 {
 
 .all-scores-div {
     height: 1rem;
-    color: var(--second-color);
+    color: var(--primary-color);
 }
 
 .all-scores-table {
     margin: 0 auto;
-    height: 10vh;
 }
 
 .scores-tbl-header {
     font-size: 4rem;
     padding: 2rem;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--bigger-font);
 }
 
 .scores-tbl-content {
@@ -181,13 +214,15 @@ h2 {
 }
 
 .all-scores-table th {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--small-font);
     padding: 2rem;
+    font-size: 4rem;
 }
 
 .scores-tbl-content td {
     text-align: center;
     padding: 0.5rem;
+    font-size: 3rem;
 }
 
 .scores-tbl-content tr:nth-child(1) {
@@ -208,16 +243,16 @@ footer {
     padding: 3rem;
 }
 
-footer h2 {
-    color: white;
+footer h3 {
+    font-family: var(--small-font);
+    color: var(--secondary-color);
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
 }
 
 .footer-img{
     display: block;
-    width: 15%;
-    margin: 0 auto;
-    padding: 2rem;
+    width: 10%;
+    margin: 1.5rem auto;
 }
