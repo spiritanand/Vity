@@ -4,17 +4,25 @@ const moles = document.querySelectorAll('.mole');
 const allTimeScoreBoard = document.querySelector(".scores-tbl-content");
 let lastHole, timeUp = false, started = false, score = 0;
 let allPlayers = JSON.parse(localStorage.getItem("items")) || [];
+let slider = document.getElementById("difficultyRange");
+
 let currentPlayer = {};
 let difficulty;
-let max = 2000, min = 600;
+let timeout = 12500;
+let max = 2600, min = 1000;
 
 document.nameForm.addEventListener("submit", submitted);
 moles.forEach(mole => mole.addEventListener("click", bonk));
 
 function submitted(e) {
     e.preventDefault();
+    difficulty = slider.value;
+    max /= difficulty;
+    min /= difficulty;
+    console.log(slider.value);
     currentPlayer.name = this.playerName.value;
     currentPlayer.score = 0;
+    currentPlayer.difficulty = difficulty;
     currentPlayer.date = new Date();
     startGame();
     this.reset();
@@ -27,7 +35,7 @@ function startGame() {
     scoreBoard.textContent = score;
     timeUp = false;
     peep();
-    setTimeout(endGame, 10000);
+    setTimeout(endGame, timeout);
 }
 
 function randTime(max, min) {

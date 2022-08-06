@@ -11,10 +11,9 @@
 <div class=start>
     <h1>Whack the -vity!<br><span class="score">0</span></h1>
     <form class ="name-form" name="nameForm">
-        <fieldset> <legend>Difficulty</legend>
-            <label><input id="Recruit" type="radio" name="indoor-outdoor" value="indoor">Recruit</label>
-            <label><input id="Regular" type="radio" name="indoor-outdoor" value="outdoor">Regular</label>
-            <label><input id="veteran" type="radio" name="indoor-outdoor" value="outdoor">Veteran</label>
+        <fieldset class="difficulty"> <legend>Difficulty</legend>
+            <span class="min-label">Easy</span><input type="range" min="1" max="5" value="2.5" class="slider"
+                   id="difficultyRange"><span class="max-label">Expert</span>
         </fieldset>
         <label>
             <input name="playerName" class="player-name" type="text"
