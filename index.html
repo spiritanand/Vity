@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VITY</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,32 +11,39 @@
 <div class=start>
     <h1>Whack the -vity!<br><span class="score">0</span></h1>
     <form class ="name-form" name="nameForm">
-        <input name="playerName" class="player-name" type="text"
-               placeholder="Player Name"
-               autocomplete="off"
-               required>
+        <fieldset> <legend>Difficulty</legend>
+            <label><input id="Recruit" type="radio" name="indoor-outdoor" value="indoor">Recruit</label>
+            <label><input id="Regular" type="radio" name="indoor-outdoor" value="outdoor">Regular</label>
+            <label><input id="veteran" type="radio" name="indoor-outdoor" value="outdoor">Veteran</label>
+        </fieldset>
+        <label>
+            <input name="playerName" class="player-name" type="text"
+                   placeholder="Player Name"
+                   autocomplete="off"
+                   required>
+        </label>
         <button class="start-btn" type="submit">++VITY++</button>
     </form>
 </div>
 
 <div class="game">
     <div class="hole hole1">
-        <div class="mole mole-doubt"></div>
+        <div class="mole mole-doubt"><img src="mole-doubt.svg" alt=""></div>
     </div>
     <div class="hole hole2">
-        <div class="mole mole-anxiety"></div>
+        <div class="mole mole-anxiety"><img src="mole-anxiety.svg" alt=""></div>
     </div>
     <div class="hole hole3">
-        <div class="mole mole-fear"></div>
+        <div class="mole mole-fear"><img src="mole-fear.svg" alt=""></div>
     </div>
     <div class="hole hole4">
-        <div class="mole mole-anger"></div>
+        <div class="mole mole-anger"><img src="mole-anger.svg" alt=""></div>
     </div>
     <div class="hole hole5">
-        <div class="mole mole-stress"></div>
+        <div class="mole mole-stress"><img src="mole-stress.svg" alt=""></div>
     </div>
     <div class="hole hole6">
-        <div class="mole mole-toxic"></div>
+        <div class="mole mole-toxic"><img src="mole-toxic.svg" alt=""></div>
     </div>
 </div>
 
@@ -64,7 +72,7 @@
 </body>
 <footer>
     <h3> Made with ♥️ <br>In 🇮🇳️</h3>
-    <a href="https://github.com/spiritmonster"
+    <a href="https://github.com/spiritmonster/Whack-The-Negativity"
        target="_blank" rel="noopener noreferrer"
     >
         <img class="footer-img" src="./github.png" alt="github-icon-link">
