@@ -24,14 +24,14 @@ html,body {
 h1 {
     color: var(--secondary-color);
     text-align: center;
-    font-size: clamp(3rem, 6vw, 7rem);
+    font-size: clamp(3rem, 6vw, 4rem);
     margin: 0.75rem auto;
     text-transform: capitalize;
     font-family: var(--bigger-font);
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     text-transform: capitalize;
     font-family: var(--bigger-font);
     color: var(--primary-color);
@@ -118,7 +118,7 @@ h2 {
 .start-btn {
     display: block;
     width: min(25%, 100px);
-    font-size: clamp(0.75rem, 2vw, 1.5rem);
+    font-size: clamp(0.75rem, 1.1vw, 1.5rem);
     color: var(--secondary-color);
     cursor: pointer;
     border: none;
@@ -141,7 +141,7 @@ h2 {
 /*Hole + Mole + Game*/
 .game {
     min-height: 50vh;
-    max-width: 600px;
+    max-width: 750px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
