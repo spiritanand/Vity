@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Montserrat&display=swap');
 
-
 :root {
     --primary-color: #2F4858;
     --secondary-color: #43B93A;
@@ -8,36 +7,45 @@
     --grass-color: #43B93A;
     --bigger-font: 'EB Garamond', serif;
     --small-font: 'Montserrat', sans-serif;
-;
 }
+
 *,*:before,*:after{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html,body {
-    box-sizing: border-box;
     background-repeat: no-repeat;
     font-family: var(--small-font);
+    background-color: var(--grass-color);
 }
 
 h1 {
     color: var(--secondary-color);
     text-align: center;
-    font-size: 2.75rem;
+    font-size: clamp(3rem, 6vw, 7rem);
     margin: 0.75rem auto;
     text-transform: capitalize;
     font-family: var(--bigger-font);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 4rem);
     text-transform: capitalize;
     font-family: var(--bigger-font);
     color: var(--primary-color);
 }
 
+/*Title*/
+.score {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 1rem;
+    line-height: 1;
+    border-radius: 1rem;
+}
 
+/*Starting form*/
 .start {
     background-image: linear-gradient(to bottom, #2f4858, #00667a,
     #008582, #00a16c, #43b93a);
@@ -50,24 +58,24 @@ h2 {
 }
 
 .difficulty{
-    width: 60%;
+    width: min(60%, 400px);
     margin: 0.5rem auto;
     color: var(--third-color);
     display: flex;
     align-items: center;
-    border: 1px dashed var(--secondary-color);
+    border: 0.01rem dashed var(--secondary-color);
 }
 
 .min-label, .max-label{
     color :var(--third-color);
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
     flex: 1 1 10%;
 }
 
 .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 15px;
+    height: 1rem;
     border-radius: 5px;
     opacity: 0.7;
     margin: 1rem;
@@ -76,8 +84,8 @@ h2 {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     background: #FF7218;
     cursor: pointer;
@@ -101,23 +109,16 @@ h2 {
     border: 2px solid var(--secondary-color);
 }
 
-.score {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0 1rem;
-    line-height: 1;
-    border-radius: 1rem;
-}
-
 .player-name {
-    height: 100%;
+    max-width: 250px;
     font-size: 1rem;
     margin: 0.5rem auto;
 }
 
 .start-btn {
     display: block;
-    font-size: 0.75rem;
-    width: 25%;
+    width: min(25%, 100px);
+    font-size: clamp(0.75rem, 2vw, 1.5rem);
     color: var(--secondary-color);
     cursor: pointer;
     border: none;
@@ -137,9 +138,11 @@ h2 {
     transform: translateY(3px);
 }
 
-/*Hole Mole and Game*/
+/*Hole + Mole + Game*/
 .game {
-    height: 50vh;
+    min-height: 50vh;
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -158,12 +161,11 @@ h2 {
     background: url(dirt.svg) bottom center no-repeat;
     background-size: contain;
     content: '';
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     position: absolute;
-    top: 45%;
+    top: 58%;
     right: 20%;
-    padding: 1rem;
 }
 
 .mole img{
@@ -187,16 +189,13 @@ h2 {
 .all-scores {
     padding: 1rem;
     background-image: linear-gradient(to top, #2f4858, #00667a, #008582, #00a16c, #43b93a);
-    min-height: 200px;
 }
 
 .all-scores h2 {
     text-align: center;
-    margin: 0 auto;
 }
 
 .all-scores-div {
-    /*height: 1rem;*/
     color: var(--primary-color);
 }
 
@@ -204,20 +203,17 @@ h2 {
     margin: 0 auto;
 }
 
-.all-scores h2{
-    font-size: 2rem;
-}
-
 .all-scores-table th {
     font-family: var(--bigger-font);
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .scores-tbl-content td {
     text-align: center;
     padding: 0.25rem;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
 }
 
 .scores-tbl-content tr:nth-child(1) {
@@ -236,7 +232,7 @@ h2 {
 footer {
     display: block;
     background-color: black;
-    padding: 0.75rem;
+    padding: 0.5rem;
 }
 
 footer h3 {
@@ -249,6 +245,27 @@ footer h3 {
 
 .footer-img{
     display: block;
-    width: 10%;
+    width: min(10%, 35px);
     margin: 0.5rem auto;
+}
+
+@media (min-width: 500px){
+    .name-and-go{
+        display: flex;
+        justify-content: center;
+    }
+
+    .name-form input{
+        width: 60%;
+    }
+
+    .start-btn{
+        margin: 0;
+    }
+
+    .game{
+    }
+    .hole{
+        flex: 1 1 30%;
+    }
 }

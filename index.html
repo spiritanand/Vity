@@ -11,17 +11,21 @@
 <div class=start>
     <h1>Whack the -vity!<br><span class="score">0</span></h1>
     <form class ="name-form" name="nameForm">
+        <div>
         <fieldset class="difficulty"> <legend>Difficulty</legend>
             <span class="min-label">Easy</span><input type="range" min="1" max="5" value="2.5" class="slider"
                    id="difficultyRange"><span class="max-label">Expert</span>
         </fieldset>
-        <label>
-            <input name="playerName" class="player-name" type="text"
-                   placeholder="Player Name"
-                   autocomplete="off"
-                   required>
-        </label>
-        <button class="start-btn" type="submit">++VITY++</button>
+        </div>
+        <div class="name-and-go">
+            <label>
+                <input name="playerName" class="player-name" type="text"
+                       placeholder="Name"
+                       autocomplete="off"
+                       required>
+            </label>
+            <button class="start-btn" type="submit">++VITY++</button>
+        </div>
     </form>
 </div>
 

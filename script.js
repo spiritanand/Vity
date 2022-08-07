@@ -9,16 +9,17 @@ let slider = document.getElementById("difficultyRange");
 let currentPlayer = {};
 let difficulty;
 let timeout = 12500;
-let max = 2600, min = 1000;
-
+let maxTime = 3500;
+let minTime = 1500;
+let max, min;
 document.nameForm.addEventListener("submit", submitted);
-moles.forEach(mole => mole.addEventListener("click", bonk));
 
+moles.forEach(mole => mole.addEventListener("click", bonk));
 function submitted(e) {
     e.preventDefault();
     difficulty = slider.value;
-    max /= difficulty;
-    min /= difficulty;
+    max = maxTime/difficulty;
+    min = minTime/difficulty;
     console.log(slider.value);
     currentPlayer.name = this.playerName.value;
     currentPlayer.score = 0;
