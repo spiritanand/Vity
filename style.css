@@ -158,7 +158,7 @@ h2 {
 
 .hole::after {
     display: block;
-    background: url(dirt.svg) bottom center no-repeat;
+    background: url(Images/dirt.svg) bottom center no-repeat;
     background-size: contain;
     content: '';
     width: 50%;
